@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             steps {
-		bat(/"${mvnHome}\mvn.cmd" package/)
+		bat(/"${mvnHome}\bin\mvn.cmd" install -DskipTests/)
             }
         }
     }
