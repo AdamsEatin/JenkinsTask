@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             steps {
-		bat(/"${mvnHome}\mvn.cmd" -Dmaven.test.failure.ignore clean package/)
+		bat(/"${mvnHome}\mvn.cmd" package/)
             }
         }
     }
