@@ -1,9 +1,15 @@
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent any
     stages {
+        def mvnHome
+        stage('Preparation') { // for display purposes
+            git 'https://github.com/AdamsEatin/JenkinsTask.git'
+         
+            mvnHome = tool 'M3'
+        }
         stage('build') {
             steps {
-		bat'mvn --version'
+		bat(/"${mvnHome}\mvn.cmd" --version/)
             }
         }
     }
