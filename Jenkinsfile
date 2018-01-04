@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             steps {
-		bat(/"${mvnHome}\bin\mvn.cmd" install -DskipTests/)
+		bat(/"${mvnHome}\bin\mvn.cmd"Dmaven.test.failure.ignore clean package/)
             }
         }
     }
